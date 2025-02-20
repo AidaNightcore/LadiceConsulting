@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css?family=Bungee%20Shade:400|Yaldevi:400");
+
+:root[data-theme="light"] {
+  --text: #08121c;
+  --background: #e7f0f9;
+  --primary: #40cef2;
+  --secondary: #99e9ff;
+  --accent: #89a72f;
+}
+:root[data-theme="dark"] {
+  --text: #e3edf7;
+  --background: #060f18;
+  --primary: #0d9bbf;
+  --secondary: #005066;
+  --accent: #b2d058;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Yaldevi";
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Bungee Shade";
+  font-weight: 700;
+}
+
+html {
+  font-size: 100%;
+} /* 16px */
+
+h1 {
+  font-size: 4.21rem; /* 67.36px */
+}
+
+h2 {
+  font-size: 3.158rem; /* 50.56px */
+}
+
+h3 {
+  font-size: 2.369rem; /* 37.92px */
+}
+
+h4 {
+  font-size: 1.777rem; /* 28.48px */
+}
+
+h5 {
+  font-size: 1.333rem; /* 21.28px */
+}
+
+small {
+  font-size: 0.75rem; /* 12px */
+}
