@@ -4,28 +4,122 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ladice</title>
+    <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon" />
     <link rel="stylesheet" href="./frontend/styles.css" />
   </head>
   <body>
     <header>
-      <nav></nav>
+      <nav>
+        <img
+          class="nav-logo"
+          src="./assets/Logo Ladice Consulting.svg"
+          alt=""
+        />
+        <div class="nav-text" id="navbar">
+          <a href="#about">About Us</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+          <a href="javascript:void(0);" class="icon" onclick="navbarFunction()">
+            <box-icon name="menu"></box-icon>
+          </a>
+        </div>
+      </nav>
     </header>
-    <main>
-      <div id="hero">
-        <h1>Ladice</h1>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam
-          earum, praesentium voluptas nam voluptate maiores numquam sit
-          repellendus omnis dignissimos fuga expedita. Cum provident dolorum
-          nulla id molestiae blanditiis eveniet cumque.
-        </p>
-      </div>
 
-      <section id="mission"></section>
-      <section id="services"></section>
-      <section id="contact"></section>
+    <main>
+      <img class="globe" id="globe" src="./assets/Globe.svg" alt="" />
+      <section class="sections" id="hero" dir="ltr">
+        <img class="hero-text" src="./assets/TitleSloganLogo.svg" alt="" />
+      </section>
+
+      <section class="sections" id="about" dir="ltr">
+        <h2>About Us</h2>
+        <p class="about">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, quam
+          iusto. Officia temporibus obcaecati dignissimos neque voluptatem
+          voluptatum similique placeat sint itaque assumenda eius consequuntur
+          quisquam dicta eos magnam aliquam aspernatur, blanditiis, quas esse
+          porro atque. Illo, blanditiis quibusdam. Quidem sequi officia eveniet
+          labore tempora. Fugit odio, obcaecati sequi rerum tempore, sunt omnis
+          sed dicta quis fugiat quod atque voluptatem laudantium accusantium,
+          consequatur illum officia voluptates. Accusamus obcaecati possimus
+          consequatur nemo quibusdam officiis illum sunt mollitia! Accusantium
+          nemo soluta omnis quisquam, veniam doloribus ea commodi, impedit magni
+          facere sunt veritatis sit fuga expedita officia voluptatum, a
+          assumenda. Vero, dolores dolore.
+        </p>
+      </section>
+      <section class="sections" id="services" dir="ltr">
+        <div class="services-container">
+          <h2>Services</h2>
+          <details class="service" name="services">
+            <summary class="service-title">
+              <span class="service-span">Service 1</span>
+            </summary>
+            <p class="service-decription">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla
+              sed quidem atque numquam vitae amet consequuntur magni qui vero
+              possimus enim, adipisci error quisquam impedit quis illo
+              doloremque suscipit eveniet ratione accusamus architecto
+              dignissimos. Veniam, a eaque. Necessitatibus tenetur quasi, illum
+              ipsam cumque tempora minima ex? Ad et rem totam.
+            </p>
+          </details>
+          <details class="service" name="services">
+            <summary class="service-title">
+              <span class="service-span">Service 2</span>
+            </summary>
+            <p class="service-decription">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Dignissimos sint voluptatem provident eos accusantium cum
+              exercitationem eum nulla soluta a, reprehenderit repudiandae sequi
+              iusto nisi excepturi corrupti dolorum et error fuga voluptas non
+              facilis ratione autem consequatur? Fugiat harum architecto nam
+              reprehenderit nemo possimus cupiditate esse, ducimus est
+              accusantium ab.
+            </p>
+          </details>
+          <details class="service" name="services">
+            <summary class="service-title">
+              <span class="service-span">Service 3</span>
+            </summary>
+            <p class="service-decription">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+              accusantium nostrum, et quasi beatae suscipit voluptatem,
+              doloremque deleniti similique laborum iusto excepturi? Quisquam
+              neque dicta nisi tenetur laudantium nemo, voluptatem quo saepe,
+              quam quos dolores vel tempore debitis laborum eveniet incidunt
+              consequatur deserunt molestiae enim repudiandae corporis
+              consequuntur asperiores aperiam?
+            </p>
+          </details>
+        </div>
+      </section>
+      <section class="sections" id="contact" dir="ltr">
+        <h2>Contact</h2>
+        <div class="contact-details">
+          <p>Email: <a href="mailto:"></a></p>
+
+          <p>Phone number: <a href="tel:+">+40759135707</a></p>
+
+          <p>
+            Adress:
+            <a href="http://" target="_blank" rel="noopener noreferrer"
+              >Str. Letea, Nr. 26, Bacau Romania
+            </a>
+          </p>
+        </div>
+        <img src="./assets/package-svgrepo-com.svg" alt="" />
+      </section>
     </main>
     <footer></footer>
-    <script src="./frontend/js/"></script>
+
+    <script src="./frontend/script.js"></script>
+
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/MotionPathPlugin.min.js"></script>
   </body>
 </html>

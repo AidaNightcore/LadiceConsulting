@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Bungee%20Shade:400|Yaldevi:400");
+@import url("https://fonts.googleapis.com/css?family=Fredoka:wght@300..700&display=swap|Yaldevi:400");
 
 :root[data-theme="light"] {
   --text: #08121c;
@@ -18,11 +18,17 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: "Yaldevi";
   font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow-x: clip;
 }
 
 h1,
@@ -30,7 +36,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Bungee Shade";
+  font-family: "Fredoka";
   font-weight: 700;
 }
 
@@ -61,3 +67,177 @@ h5 {
 small {
   font-size: 0.75rem; /* 12px */
 }
+
+main {
+  position: relative;
+  scroll-padding-top: 3rem;
+  padding: 0 15%;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  z-index: 2;
+}
+
+main {
+  position: relative;
+  overflow-y: scroll;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 3rem; /* matches navbar height */
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+/* -------- START Navbar -------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 3rem;
+}
+
+.nav-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8%;
+}
+
+/* Style the links inside the navigation bar */
+.nav-text a {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.nav-text a:hover {
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.nav-text a.active {
+  background-color: #04aa6d;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.nav-text .icon {
+  display: none;
+}
+
+.nav-text .icon {
+  display: none;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .nav-text a:not(:first-child) {
+    display: none;
+  }
+  .nav-text a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .nav-text.responsive {
+    position: relative;
+    color: var(--text);
+  }
+  .nav-text.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .nav-text.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+/* -------- END Navbar-------- */
+
+/* -------- START Hero -------- */
+
+#hero {
+  display: flex;
+  align-items: center;
+}
+
+.hero-text {
+  width: 40vw;
+}
+
+/* -------- END Hero-------- */
+
+/* -------- START Globe -------- */
+
+/* .globe {
+  position: absolute;
+  width: 100vh; 
+  z-index: 0;
+} 
+*/
+.globe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40vw;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0; /* behind navbar */
+}
+
+/* -------- END Globe -------- */
+
+/* -------- START About -------- */
+
+/* -------- END About-------- */
+
+/* -------- START Services -------- */
+details {
+  overflow: hidden; /* Keep this line to prevent an odd blue outline around the element in Safari. */
+}
+summary {
+  display: block;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+.service-span {
+  display: flex;
+  align-items: center;
+}
+.service-span::before {
+  content: url(../assets/package.svg);
+  position: relative;
+}
+
+details[open] .service-span::before {
+  content: url(../assets/package-open.svg);
+}
+
+/* -------- END Services -------- */
+
+/* -------- START Contact -------- */
+
+/* -------- END Contact -------- */
+
+/* -------- START Footer -------- */
+
+/* -------- END Footer -------- */
