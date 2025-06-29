@@ -1,18 +1,32 @@
 @import url("https://fonts.googleapis.com/css?family=Fredoka:wght@300..700&display=swap|Yaldevi:400");
 
-:root[data-theme="light"] {
-  --text: #08121c;
-  --background: #e7f0f9;
-  --primary: #40cef2;
-  --secondary: #99e9ff;
-  --accent: #89a72f;
-}
-:root[data-theme="dark"] {
-  --text: #e3edf7;
-  --background: #060f18;
-  --primary: #0d9bbf;
-  --secondary: #005066;
-  --accent: #b2d058;
+:root {
+  /* Text */
+  --text-heading: #173753; /* titluri, text important */
+  --text-body: #4a4a4a; /* text de bază, paragrafe */
+  --text-inverse: #ffffff; /* text pe fundal închis */
+
+  /* Fundaluri */
+  --bg-default: #f5f7fa; /* fundal principal */
+  --bg-muted: #e6ebfc; /* secțiuni secundare, carduri INFO */
+
+  /* Borduri / separatoare */
+  --border: #e0e4e8;
+
+  /* Paleta principală (logo) */
+  --primary: #068d9d;
+  --primary-hover: #089faf;
+
+  /* --secondary: #00b7ff;  */
+  /* --secondary: #6fd6ff; */
+  --secondary: #85c3ea;
+
+  /* Accente suplimentare */
+  --accent-blue: #4294fe;
+  --accent-orange: #ffb739;
+  --accent-orange-hover: #e6a834;
+
+  scroll-padding-top: 3rem;
 }
 
 * {
@@ -20,6 +34,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+html {
+  font-size: 140%;
+} /* 16px */
 
 body {
   font-family: "Yaldevi";
@@ -29,6 +47,34 @@ body {
   align-items: center;
   flex-direction: column;
   overflow-x: clip;
+  max-width: 100vw;
+  background-color: var(--bg-default);
+}
+
+main {
+  position: relative;
+  padding: 0 15%;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100vh;
+  z-index: 1;
+  max-width: 100vw;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+.sections {
+  display: flex;
+  align-items: center;
+}
+p,
+details,
+summary {
+  z-index: 1;
 }
 
 h1,
@@ -38,11 +84,13 @@ h4,
 h5 {
   font-family: "Fredoka";
   font-weight: 700;
+  z-index: 1;
+  color: var(--text-heading);
 }
 
-html {
-  font-size: 100%;
-} /* 16px */
+p {
+  color: var(--text-body);
+}
 
 h1 {
   font-size: 4.21rem; /* 67.36px */
@@ -63,38 +111,16 @@ h4 {
 h5 {
   font-size: 1.333rem; /* 21.28px */
 }
-
-small {
-  font-size: 0.75rem; /* 12px */
+a:visited {
+  color: var(--text-dark);
 }
 
-main {
-  position: relative;
-  scroll-padding-top: 3rem;
-  padding: 0 15%;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
-  z-index: 2;
-}
-
-main {
-  position: relative;
-  overflow-y: scroll;
-  height: 100vh;
-  scroll-snap-type: y mandatory;
-  scroll-padding-top: 3rem; /* matches navbar height */
-}
-
-section {
-  height: 100vh;
-  scroll-snap-align: start;
-}
 /* -------- START Navbar -------- */
 header {
   position: sticky;
   top: 0;
-  z-index: 3;
+  z-index: 2;
+  background-color: var(--secondary);
 }
 
 nav {
@@ -103,102 +129,110 @@ nav {
   align-items: center;
   width: 100vw;
   height: 3rem;
+  max-width: 100vw;
+  padding: 1rem 3rem;
+  background-color: var(--secondary);
 }
 
 .nav-logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 8%;
+  width: 8rem;
 }
 
-/* Style the links inside the navigation bar */
+.nav-text {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-direction: row;
+}
+
+/* The navigation menu links */
 .nav-text a {
   float: left;
-  display: block;
-  text-align: center;
-  padding: 14px 16px;
+  display: flex;
+  flex-direction: row;
+  text-wrap-mode: nowrap;
   text-decoration: none;
-  font-size: 17px;
 }
 
-/* Change the color of links on hover */
+/* When you mouse over the navigation links, change their color */
 .nav-text a:hover {
-  color: black;
+  color: var(--accent);
 }
-
-/* Add an active class to highlight the current page */
-.nav-text a.active {
-  background-color: #04aa6d;
-  color: white;
-}
-
-/* Hide the link that should open and close the topnav on small screens */
-.nav-text .icon {
+a.closebtn,
+.menu-button {
   display: none;
 }
+/* Position and style the close button (top right corner) */
 
-.nav-text .icon {
-  display: none;
-}
-
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 600px) {
-  .nav-text a:not(:first-child) {
-    display: none;
-  }
-  .nav-text a.icon {
-    float: right;
-    display: block;
-  }
-}
-
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 600px) {
-  .nav-text.responsive {
-    position: relative;
-    color: var(--text);
-  }
-  .nav-text.responsive a.icon {
-    position: absolute;
+/* On smaller screens, where height is less than 450px, change the style of the nav-text.nav-text (less padding and a smaller font size) */
+@media screen and (max-width: 1200px) {
+  .nav-text {
+    flex-direction: column;
+    justify-content: start;
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    top: 0; /* Stay at the top */
     right: 0;
-    top: 0;
+    background-color: var(--secondary); /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 10vw; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the nav-text.nav-text */
   }
-  .nav-text.responsive a {
-    float: none;
+  .menu-button {
     display: block;
-    text-align: left;
+  }
+  .nav-text .closebtn {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 2vw;
+    font-size: 300%;
+    margin-left: 5vw;
+    color: var(--text-dark);
+  }
+  .nav-text {
+    padding-top: 1rem;
+  }
+  .nav-text a {
+    font-size: 140%;
+    text-wrap-mode: wrap;
   }
 }
+
 /* -------- END Navbar-------- */
 
 /* -------- START Hero -------- */
 
 #hero {
-  display: flex;
-  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
 }
-
-.hero-text {
+#globe-hero {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: 10vw 50%;
+}
+.global-half-hero {
+  height: 100vh;
   width: 40vw;
+}
+.hero-text {
+  width: 50vw;
 }
 
 /* -------- END Hero-------- */
 
 /* -------- START Globe -------- */
 
-/* .globe {
-  position: absolute;
-  width: 100vh; 
-  z-index: 0;
-} 
-*/
 .globe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
   width: 40vw;
-  transform: translate(-50%, -50%);
   pointer-events: none;
   z-index: 0; /* behind navbar */
 }
@@ -206,12 +240,32 @@ nav {
 /* -------- END Globe -------- */
 
 /* -------- START About -------- */
+#about {
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+  justify-content: space-between;
+}
 
+#globe-about {
+  width: 100vw;
+  height: 55vh;
+  object-fit: cover;
+  object-position: 0% 0%;
+}
+.globe-half-about {
+  width: 100vw;
+}
+.about-container {
+  padding-top: 3rem;
+}
 /* -------- END About-------- */
 
 /* -------- START Services -------- */
 details {
-  overflow: hidden; /* Keep this line to prevent an odd blue outline around the element in Safari. */
+  overflow: hidden;
+  width: 35vw;
+  text-align: justify;
 }
 summary {
   display: block;
@@ -225,19 +279,117 @@ summary::-webkit-details-marker {
 }
 .service-span::before {
   content: url(../assets/package.svg);
+
+  transform: scale(1.5);
   position: relative;
+  padding: 0.5rem;
 }
 
 details[open] .service-span::before {
   content: url(../assets/package-open.svg);
 }
+.services-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3rem;
+
+  align-self: start;
+  /* gap: 1.5rem; */
+}
+
+#services {
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#globe-services {
+  padding: 3rem;
+}
 
 /* -------- END Services -------- */
 
 /* -------- START Contact -------- */
+#package {
+  width: 40rem;
+  padding-top: 3rem;
+}
+#contact {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+
+  padding-top: 3rem;
+}
 /* -------- END Contact -------- */
 
 /* -------- START Footer -------- */
 
 /* -------- END Footer -------- */
+
+/* -------- START Keyframes -------- */
+
+
+
+/* -------- END Keyframes -------- */
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 100%;
+  }
+  .about-container {
+    text-align: justify;
+  }
+  #globe-about {
+    width: 100vw;
+    height: 30vh;
+    object-fit: cover;
+    object-position: 0% 0%;
+  }
+
+  .about-2 {
+    display: none;
+  }
+  main {
+    padding: 0 5%;
+  }
+  #globe-services {
+    display: none;
+  }
+  details {
+    width: 85vw;
+  }
+  .services-container {
+    gap: 5vh;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  #globe-about {
+    width: 100vw;
+    height: 30vh;
+    object-fit: cover;
+    object-position: 0% 0%;
+  }
+  #globe-services {
+    display: none;
+  }
+  details {
+    width: 70vw;
+  }
+  .services-container {
+    gap: 5vh;
+  }
+
+  .hero-text {
+    width: 70vw;
+  }
+}
