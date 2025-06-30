@@ -1,4 +1,3 @@
-
 function openNav() {
   document.getElementById("navbar").style.width = "60vw";
 }
@@ -12,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".nav-text a").forEach((link) => {
     link.addEventListener("click", (e) => {
-      e.preventDefault(); 
+      e.preventDefault();
 
       const id = link.getAttribute("href").slice(1);
       const target = document.getElementById(id);

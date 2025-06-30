@@ -2,13 +2,13 @@
 
 :root {
   /* Text */
-  --text-heading: #173753; /* titluri, text important */
-  --text-body: #4a4a4a; /* text de bază, paragrafe */
-  --text-inverse: #ffffff; /* text pe fundal închis */
+  --text-heading: #173753;
+  --text-body: #173753;
+  --text-inverse: #fcf7f8;
 
   /* Fundaluri */
-  --bg-default: #f5f7fa; /* fundal principal */
-  --bg-muted: #e6ebfc; /* secțiuni secundare, carduri INFO */
+  --bg-default: #ffeac3;
+  --bg-muted: #ffd488;
 
   /* Borduri / separatoare */
   --border: #e0e4e8;
@@ -17,14 +17,10 @@
   --primary: #068d9d;
   --primary-hover: #089faf;
 
-  /* --secondary: #00b7ff;  */
-  /* --secondary: #6fd6ff; */
-  --secondary: #85c3ea;
+  --secondary: #ffd488;
 
   /* Accente suplimentare */
-  --accent-blue: #4294fe;
-  --accent-orange: #ffb739;
-  --accent-orange-hover: #e6a834;
+  --accent: #d17a00;
 
   scroll-padding-top: 3rem;
 }
@@ -37,7 +33,7 @@
 
 html {
   font-size: 140%;
-} /* 16px */
+}
 
 body {
   font-family: "Yaldevi";
@@ -53,7 +49,6 @@ body {
 
 main {
   position: relative;
-  padding: 0 15%;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -70,11 +65,27 @@ section {
 .sections {
   display: flex;
   align-items: center;
+  width: 100vw;
+  padding: 0 15%;
 }
+
+.sections:nth-child(even) {
+  background-color: var(--bg-muted);
+}
+
 p,
 details,
 summary {
   z-index: 1;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover,
+p:hover > a {
+  color: var(--accent);
 }
 
 h1,
@@ -138,7 +149,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 8rem;
+  width: 7vw;
 }
 
 .nav-text {
@@ -150,7 +161,6 @@ nav {
   flex-direction: row;
 }
 
-/* The navigation menu links */
 .nav-text a {
   float: left;
   display: flex;
@@ -159,7 +169,6 @@ nav {
   text-decoration: none;
 }
 
-/* When you mouse over the navigation links, change their color */
 .nav-text a:hover {
   color: var(--accent);
 }
@@ -167,22 +176,20 @@ a.closebtn,
 .menu-button {
   display: none;
 }
-/* Position and style the close button (top right corner) */
 
-/* On smaller screens, where height is less than 450px, change the style of the nav-text.nav-text (less padding and a smaller font size) */
 @media screen and (max-width: 1200px) {
   .nav-text {
     flex-direction: column;
     justify-content: start;
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    top: 0; /* Stay at the top */
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
     right: 0;
-    background-color: var(--secondary); /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 10vw; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the nav-text.nav-text */
+    background-color: var(--secondary);
+    overflow-x: hidden;
+    padding-top: 10vw;
+    transition: 0.5s;
   }
   .menu-button {
     display: block;
@@ -264,38 +271,41 @@ a.closebtn,
 /* -------- START Services -------- */
 details {
   overflow: hidden;
-  width: 35vw;
+  width: 30vw;
   text-align: justify;
 }
 summary {
   display: block;
+  background-color: var(--primary);
+  color: var(--text-inverse);
+  border-radius: 2vw;
+  cursor: pointer;
 }
 summary::-webkit-details-marker {
   display: none;
 }
+
 .service-span {
   display: flex;
   align-items: center;
 }
 .service-span::before {
   content: url(../assets/package.svg);
-
-  transform: scale(1.5);
+  zoom: 140%;
   position: relative;
-  padding: 0.5rem;
 }
 
 details[open] .service-span::before {
   content: url(../assets/package-open.svg);
+  zoom: 140%;
 }
 .services-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 3rem;
-
   align-self: start;
-  /* gap: 1.5rem; */
+  gap: 2vw;
 }
 
 #services {
@@ -305,7 +315,7 @@ details[open] .service-span::before {
 }
 
 #globe-services {
-  padding: 3rem;
+  margin-right: 3rem;
 }
 
 /* -------- END Services -------- */
@@ -336,16 +346,40 @@ details[open] .service-span::before {
 /* -------- END Footer -------- */
 
 /* -------- START Keyframes -------- */
+@keyframes globe-hero-animation {
+}
 
+@keyframes globe-about-animation {
+}
 
+@keyframes globe-services-animation {
+}
 
+@keyframes box-contact-animation {
+}
 /* -------- END Keyframes -------- */
 
 @media only screen and (max-width: 768px) {
   html {
     font-size: 100%;
   }
-  .about-container {
+  .nav-logo {
+    width: 45vw;
+  }
+  .hero-text {
+    width: 40vh;
+    z-index: 1;
+  }
+  .global-half-hero {
+    width: 10vw;
+    translate: -600%;
+    z-index: 0;
+  }
+  .global-half-hero#globe-hero {
+    z-index: 0;
+    object-position: -50% 50%;
+  }
+  .about-container :not(h2) {
     text-align: justify;
   }
   #globe-about {
@@ -358,7 +392,7 @@ details[open] .service-span::before {
   .about-2 {
     display: none;
   }
-  main {
+  .sections {
     padding: 0 5%;
   }
   #globe-services {
@@ -370,9 +404,15 @@ details[open] .service-span::before {
   .services-container {
     gap: 5vh;
   }
+  summary {
+    border-radius: 10vw;
+  }
+  #package {
+    width: 50vh;
+  }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1200px) {
+@media screen and (max-width: 1200px) and (min-width: 769px) {
   #globe-about {
     width: 100vw;
     height: 30vh;
@@ -388,8 +428,24 @@ details[open] .service-span::before {
   .services-container {
     gap: 5vh;
   }
-
+  .about-2 {
+    display: block;
+  }
+  #about > h2 {
+    padding-bottom: 3vh;
+  }
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+  }
   .hero-text {
     width: 70vw;
+  }
+  summary {
+    border-radius: 10vw;
+  }
+  .nav-logo {
+    width: 30vw;
   }
 }
