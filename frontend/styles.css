@@ -272,6 +272,8 @@ a.closebtn,
 details {
   overflow: hidden;
   width: 30vw;
+}
+.service-decription {
   text-align: justify;
 }
 summary {
@@ -412,7 +414,7 @@ details[open] .service-span::before {
   }
 }
 
-@media screen and (max-width: 1200px) and (min-width: 769px) {
+@media screen and (max-width: 1200px) {
   #globe-about {
     width: 100vw;
     height: 30vh;
@@ -448,4 +450,54 @@ details[open] .service-span::before {
   .nav-logo {
     width: 30vw;
   }
+}
+@media screen and (max-height: 1200px) {
+  .about-2 {
+    display: none;
+  }
+  #globe-about {
+    width: 100vw;
+    height: 30vh;
+    object-fit: cover;
+    object-position: 0% 0%;
+  }
+  #about {
+    gap: 0;
+  }
+}
+.lang-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  opacity: 0.5;
+}
+.lang-btn:hover {
+  transition: 0.3s;
+  opacity: 1;
+}
+
+.lang-btn.active {
+  transition: 0.3s;
+  opacity: 1;
+}
+
+#lang-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  aspect-ratio: 4/3;
+  width: 1.5rem;
+}
+
+.lang-btn img {
+  width: 100%;
+  height: auto;
+  display: block;
 }

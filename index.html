@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ladice</title>
     <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon" />
     <link rel="stylesheet" href="./frontend/styles.css" />
+    <meta name="title" content="Ladice Consulting " />
+    <meta
+      name="description"
+      content="Ladice Consulting SRL is a Romanian company with over 9 years of experience in the import and distribution of non-food products. Over time, we have built a solid reputation on the Romanian market thanks to our reliability, promptness, and the quality of the products we offer. Our activity focuses on importing a wide range of non-food products, serving both the retail sector and clients in distribution or e-commerce.Our mission is to provide our partners with efficient and competitive solutions tailored to market needs. We emphasize transparency, quality, and long-term partnerships, and the experience we've gained allows us to consistently deliver added value to our clients. With a well-structured logistics system and a professional team, Ladice Consulting SRL is a reliable partner in the supply of non-food products. We are committed to continuous development and the expansion of our portfolio to promptly respond to the ever-changing demands of the market."
+    />
+    <meta
+      name="keywords"
+      content="romania, china, turkey, germany, consulting, ladice, romanian, experience, import, distribution, non-food products, retail, e-commerce, distributions, imports, exports, export, market needs, logistics system, changing demands, Ladice Consulting SRL "
+    />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="English" />
+    <meta name="language" content="Romanian" />
+    <meta name="revisit-after" content="30 days" />
   </head>
   <body>
     <header>
@@ -15,9 +29,23 @@
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
             >&times;</a
           >
-          <a href="#about">About Us</a>
-          <a href="#services">Services</a>
-          <a href="#contact">Contact</a>
+          <a href="#about">
+            <span lang="en">About Us</span> <span lang="ro">Despre noi</span></a
+          >
+          <a href="#services">
+            <span lang="en">Services</span> <span lang="ro">Servicii</span></a
+          >
+          <a href="#contact">
+            <span lang="en">Contact</span> <span lang="ro">Contact</span></a
+          >
+          <div id="lang-buttons">
+            <button data-lang="en" class="lang-btn" aria-label="English">
+              <img src="assets/gb.svg" alt="English" />
+            </button>
+            <button data-lang="ro" class="lang-btn" aria-label="Română">
+              <img src="assets/ro.svg" alt="Română" />
+            </button>
+          </div>
         </div>
 
         <box-icon
@@ -43,9 +71,11 @@
 
       <section class="sections" id="about" dir="ltr">
         <div class="about-container">
-          <h2>About Us</h2>
+          <h2>
+            <span lang="en">About Us</span> <span lang="ro">Despre noi</span>
+          </h2>
           <div class="about">
-            <p class="about-1">
+            <p class="about-1" lang="en">
               Ladice Consulting SRL is a Romanian company with over 9 years of
               experience in the import and distribution of non-food products.
               Over time, we have built a solid reputation on the Romanian market
@@ -54,14 +84,14 @@
               of non-food products, serving both the retail sector and clients
               in distribution or e-commerce.
             </p>
-            <p class="about-2">
+            <p class="about-2" lang="en">
               Our portfolio includes household and garden items, cleaning and
               personal hygiene products, practical daily-use accessories,
               disposable items for the HORECA industry, seasonal goods, and many
               more — all carefully selected from trusted international
               suppliers.
             </p>
-            <p class="about-3">
+            <p class="about-3" lang="en">
               Our mission is to provide our partners with efficient and
               competitive solutions tailored to market needs. We emphasize
               transparency, quality, and long-term partnerships, and the
@@ -71,6 +101,34 @@
               in the supply of non-food products. We are committed to continuous
               development and the expansion of our portfolio to promptly respond
               to the ever-changing demands of the market.
+            </p>
+            <p class="about-1" lang="ro">
+              Ladice Consulting SRL este o companie românească cu peste 9 ani de
+              experiență în importul și distribuția de produse nealimentare.
+              De-a lungul timpului, am construit o reputație solidă pe piața
+              românească datorită fiabilității, promptitudinii și calității
+              produselor oferite. Activitatea noastră se concentrează pe
+              importul unei game largi de produse nealimentare, adresându-ne
+              atât sectorului de retail, cât și clienților din domeniul
+              distribuției sau e-commerce.
+            </p>
+            <p class="about-2" lang="ro">
+              Portofoliul nostru include articole pentru casă și grădină,
+              produse de curățenie și igienă personală, accesorii practice
+              pentru utilizare zilnică, articole de unică folosință pentru
+              industria HORECA, produse sezoniere și multe altele — toate
+              selectate cu atenție de la furnizori internaționali de încredere.
+            </p>
+            <p class="about-3" lang="ro">
+              Misiunea noastră este să oferim partenerilor soluții eficiente și
+              competitive, adaptate nevoilor pieței. Punem accent pe
+              transparență, calitate și parteneriate pe termen lung, iar
+              experiența acumulată ne permite să livrăm constant valoare
+              adăugată clienților noștri. Cu un sistem logistic bine structurat
+              și o echipă profesionistă, Ladice Consulting SRL este un partener
+              de încredere în aprovizionarea cu produse nealimentare. Suntem
+              dedicați dezvoltării continue și extinderii portofoliului pentru a
+              răspunde prompt cerințelor mereu în schimbare ale pieței.
             </p>
           </div>
         </div>
@@ -89,58 +147,119 @@
         </div>
 
         <div class="services-container">
-          <h2>Services</h2>
+          <h2>
+            <span lang="en">Services</span>
+            <span lang="ro">Servicii</span>
+          </h2>
+
           <details class="service" name="services">
             <summary class="service-title">
-              <span class="service-span">Customized Import and Supply</span>
+              <span class="service-span" lang="en"
+                >Customized Import and Supply</span
+              >
+              <span class="service-span" lang="ro"
+                >Import și distribuție personalizată</span
+              >
             </summary>
-            <p class="service-decription">
+            <p class="service-decription" lang="en">
               We carefully select and import non-food products from verified
               international suppliers, ensuring a diverse and competitive
               selection. Our portfolio is constantly adapted to client needs,
               seasonality, and market trends.
             </p>
+            <p class="service-decription" lang="ro">
+              Selectăm și importăm cu atenție produse non-alimentare de la
+              furnizori internaționali verificați, asigurând o ofertă
+              diversificată și competitivă. Portofoliul nostru este adaptat
+              constant în funcție de nevoile clienților, sezonalitate și
+              tendințele pieței.
+            </p>
           </details>
+
           <details class="service" name="services">
             <summary class="service-title">
-              <span class="service-span">Efficient Logistics Management</span>
+              <span class="service-span" lang="en"
+                >Efficient Logistics Management</span
+              >
+              <span class="service-span" lang="ro"
+                >Gestionare logistică eficientă</span
+              >
             </summary>
-            <p class="service-decription">
+            <p class="service-decription" lang="en">
               We benefit from an optimized logistics system that allows us to
               deliver quickly and in excellent conditions, regardless of order
               volume. We ensure traceability, proper packaging, and strict
               adherence to delivery deadlines.
             </p>
+            <p class="service-decription" lang="ro">
+              Beneficiem de un sistem logistic optimizat care ne permite să
+              livrăm rapid și în condiții excelente, indiferent de volumul
+              comenzilor. Asigurăm trasabilitate, ambalare corespunzătoare și
+              respectarea strictă a termenelor de livrare.
+            </p>
           </details>
+
           <details class="service" name="services">
             <summary class="service-title">
-              <span class="service-span">Product Selection Consulting</span>
+              <span class="service-span" lang="en"
+                >Product Selection Consulting</span
+              >
+              <span class="service-span" lang="ro"
+                >Consultanță pentru selecția produselor</span
+              >
             </summary>
-            <p class="service-decription">
+            <p class="service-decription" lang="en">
               We support our partners in choosing the most suitable products for
               their target audience and business profile. We analyze market
               demand and provide personalized recommendations based on our
               extensive experience.
             </p>
+            <p class="service-decription" lang="ro">
+              Susținem partenerii în alegerea celor mai potrivite produse pentru
+              publicul lor țintă și profilul afacerii. Analizăm cererea pieței
+              și oferim recomandări personalizate, bazate pe experiența noastră
+              vastă.
+            </p>
           </details>
+
           <details class="service" name="services">
             <summary class="service-title">
-              <span class="service-span">White Label Solutions</span>
+              <span class="service-span" lang="en">White Label Solutions</span>
+              <span class="service-span" lang="ro"
+                >Soluții de tip white label</span
+              >
             </summary>
-            <p class="service-decription">
+            <p class="service-decription" lang="en">
               We offer personalized product options under private label (white
               label), ideal for stores, retail chains, or online businesses
               looking to develop their own brand identity.
             </p>
+            <p class="service-decription" lang="ro">
+              Oferim opțiuni personalizate de produse sub etichetă privată
+              (white label), ideale pentru magazine, lanțuri de retail sau
+              afaceri online care doresc să își dezvolte propria identitate de
+              brand.
+            </p>
           </details>
+
           <details class="service" name="services">
             <summary class="service-title">
-              <span class="service-span">Constant Portfolio Update</span>
+              <span class="service-span" lang="en"
+                >Constant Portfolio Update</span
+              >
+              <span class="service-span" lang="ro"
+                >Actualizare constantă a portofoliului</span
+              >
             </summary>
-            <p class="service-decription">
+            <p class="service-decription" lang="en">
               We stay up to date with international trends and continuously
               diversify our offer to deliver relevant, functional products with
               a strong quality-to-price ratio.
+            </p>
+            <p class="service-decription" lang="ro">
+              Rămânem la curent cu tendințele internaționale și ne diversificăm
+              constant oferta pentru a livra produse relevante, funcționale și
+              cu un raport calitate-preț avantajos.
             </p>
           </details>
         </div>
@@ -158,7 +277,11 @@
                 >sales@ladiceconsulting.com</a
               >
             </p>
-            <p>Phone number: <a href="tel:+40759135707">+40759135707</a></p>
+            <p>
+              <span lang="en">Phone number: </span>
+              <span lang="ro">Telefon: </span>
+              <a href="tel:+40759135707">+40759135707</a>
+            </p>
 
             <p>
               Adress:
