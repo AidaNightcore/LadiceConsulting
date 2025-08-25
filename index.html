@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-VT74F6GHQ8"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-VT74F6GHQ8");
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KKDQKHXV");
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ladice</title>
     <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
+    />
     <link rel="stylesheet" href="./frontend/styles.css" />
     <meta name="title" content="Ladice Consulting " />
     <meta
@@ -22,6 +56,17 @@
     <meta name="revisit-after" content="30 days" />
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KKDQKHXV"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <header>
       <nav>
         <img class="nav-logo" src="./assets/LogoLadiceConsulting.svg" alt="" />
@@ -51,26 +96,25 @@
         <box-icon
           name="menu"
           class="menu-button"
+          id="menu-button"
           onclick="openNav()"
         ></box-icon>
       </nav>
     </header>
 
-    <main>
+    <main id="main-container">
       <section class="sections" id="hero" dir="ltr">
-        <img class="hero-text" src="./assets/TitleSloganLogo.svg" alt="" />
-        <div class="global-half-hero">
-          <img
-            class="globe animate"
-            id="globe-hero"
-            src="./assets/Globe.svg"
-            alt=""
-          />
-        </div>
+        <img
+          class="hero-text content-layer"
+          src="./assets/TitleSloganLogo.svg"
+          alt=""
+        />
+
+        <img src="assets/Globe.svg" id="globe" alt="" />
       </section>
 
       <section class="sections" id="about" dir="ltr">
-        <div class="about-container">
+        <div class="about-container content-layer">
           <h2>
             <span lang="en">About Us</span> <span lang="ro">Despre noi</span>
           </h2>
@@ -132,21 +176,10 @@
             </p>
           </div>
         </div>
-        <div class="globe-half-about animate">
-          <img class="globe" id="globe-about" src="./assets/Globe.svg" alt="" />
-        </div>
       </section>
-      <section class="sections" id="services" dir="ltr">
-        <div class="global-half-services">
-          <img
-            class="globe animate"
-            id="globe-services"
-            src="./assets/Globe.svg"
-            alt=""
-          />
-        </div>
 
-        <div class="services-container">
+      <section class="sections" id="services" dir="ltr">
+        <div class="services-container content-layer">
           <h2>
             <span lang="en">Services</span>
             <span lang="ro">Servicii</span>
@@ -265,41 +298,95 @@
         </div>
       </section>
       <section class="sections" id="contact" dir="ltr">
-        <div class="contact-container">
-          <h2>Contact</h2>
-          <div class="contact-details">
-            <p>
-              Email:
-              <a
-                href="mailto:sales@ladiceconsulting.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                >sales@ladiceconsulting.com</a
-              >
-            </p>
-            <p>
-              <span lang="en">Phone number: </span>
-              <span lang="ro">Telefon: </span>
-              <a href="tel:+40759135707">+40759135707</a>
-            </p>
+        <div class="contact-container-information content-layer">
+          <div class="contact-container">
+            <h2>Contact</h2>
+            <div class="contact-details">
+              <p>
+                Email:
+                <a
+                  href="mailto:sales@ladiceconsulting.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >sales@ladiceconsulting.com</a
+                >
+              </p>
+              <p>
+                <span lang="en">Phone number: </span>
+                <span lang="ro">Telefon: </span>
+                <a href="tel:+40759135707">+40759135707</a>
+              </p>
 
-            <p>
-              Adress:
-              <a
-                href="https://maps.app.goo.gl/DDVir1T7wZu7KHHQ6"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Str. Letea, Nr. 26, Bacau Romania
-              </a>
-            </p>
+              <p>
+                <span lang="en">Address: </span>
+                <span lang="ro">Adresă: </span>
+                <a
+                  href="https://maps.app.goo.gl/DDVir1T7wZu7KHHQ6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Str. Letea, Nr. 26, Bacau Romania
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form
+              id="form"
+              class="topBefore"
+              action="https://www.formbackend.com/f/de2e0d4ef489e647"
+              method="POST"
+            >
+              <input
+                type="text"
+                name="honeypot"
+                style="display: none"
+                tabindex="-1"
+                autocomplete="off"
+              />
+
+              <input
+                id="subject"
+                name="subject"
+                type="text"
+                placeholder="Subject"
+              />
+              <input id="email" name="email" type="email" placeholder="Email" />
+              <textarea
+                id="message"
+                name="message"
+                type="text"
+                placeholder="Message"
+              ></textarea>
+
+              <script src="https://www.google.com/recaptcha/api.js"></script>
+
+              <input
+                class="g-recaptcha"
+                data-sitekey="6LcXTJkrAAAAAHbThKj8jt_oszjm29RN71-lz5_R"
+                data-callback="onSubmit"
+                data-action="submit"
+                id="submit"
+                type="submit"
+                value="Submit"
+              />
+              <script>
+                function onSubmit(token) {
+                  document.getElementById("form").submit();
+                }
+              </script>
+            </form>
           </div>
         </div>
+
         <img id="package" src="./assets/package-svgrepo-com.svg" alt="" />
       </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
     <script src="./frontend/script.js"></script>
-
+    <script src="./frontend/animation.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   </body>
 </html>
