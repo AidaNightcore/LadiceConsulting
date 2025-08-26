@@ -312,10 +312,8 @@ document.addEventListener("DOMContentLoaded", () => {
         globeTl.to(
           globe,
           {
-            top: "150%",
+            top: "150vh",
             left: "70vw",
-            width: "20vw",
-            ease: "none",
           },
           sectionPositions[1]
         );
@@ -326,10 +324,8 @@ document.addEventListener("DOMContentLoaded", () => {
         globeTl.to(
           globe,
           {
-            top: "250%",
-            left: "-20vw",
-            width: "18vw",
-            ease: "none",
+            top: "215vh",
+            left: "-100vw",
           },
           sectionPositions[2]
         );
